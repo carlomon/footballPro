@@ -6,6 +6,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
 
 public class Menu extends JFrame {
 
@@ -35,8 +41,23 @@ public class Menu extends JFrame {
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		contentPane.setLayout(new BorderLayout(0, 0));
 		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 432, 26);
+		contentPane.add(menuBar);
+		
+		JMenu mnMantenimiento = new JMenu("Mantenimiento");
+		menuBar.add(mnMantenimiento);
+		
+		JMenuItem mntmEquipos = new JMenuItem("Equipos");
+		mnMantenimiento.add(mntmEquipos);
+		
+		JMenu mnGestin = new JMenu("Gesti\u00F3n");
+		menuBar.add(mnGestin);
+		
+		JMenuItem mntmTraspasos = new JMenuItem("Traspasos");
+		mnGestin.add(mntmTraspasos);
 	}
-
 }
