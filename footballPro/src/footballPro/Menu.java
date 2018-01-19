@@ -12,6 +12,8 @@ import java.awt.event.ActionEvent;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
+import java.awt.Color;
+import java.awt.Font;
 
 public class Menu extends JFrame {
 
@@ -25,6 +27,7 @@ public class Menu extends JFrame {
 			public void run() {
 				try {
 					Menu frame = new Menu();
+					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -45,19 +48,32 @@ public class Menu extends JFrame {
 		contentPane.setLayout(null);
 		
 		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(0, 0, 432, 26);
+		menuBar.setFont(new Font("Segoe UI", Font.BOLD, 24));
+		menuBar.setForeground(Color.DARK_GRAY);
+		menuBar.setBounds(0, 0, 432, 68);
 		contentPane.add(menuBar);
 		
 		JMenu mnMantenimiento = new JMenu("Mantenimiento");
+		mnMantenimiento.setFont(new Font("Segoe UI", Font.BOLD, 24));
 		menuBar.add(mnMantenimiento);
 		
 		JMenuItem mntmEquipos = new JMenuItem("Equipos");
 		mnMantenimiento.add(mntmEquipos);
 		
 		JMenu mnGestin = new JMenu("Gesti\u00F3n");
+		mnGestin.setFont(new Font("Segoe UI", Font.BOLD, 24));
 		menuBar.add(mnGestin);
 		
 		JMenuItem mntmTraspasos = new JMenuItem("Traspasos");
 		mnGestin.add(mntmTraspasos);
+		
+		JButton btnCerrarSesion = new JButton("Cerrar Sesion");
+		btnCerrarSesion.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
+		btnCerrarSesion.setBounds(299, 215, 121, 25);
+		contentPane.add(btnCerrarSesion);
 	}
 }
