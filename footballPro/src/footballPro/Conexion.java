@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class Conexion {
 	private static Connection conn;
-	private static String server="jdbc:*";
+	private static String server="jdbc:mysql://localhost:3306/footballPro";
 	private static String user="izquierdo";
 	private static String pass="izquierdo";
 	
